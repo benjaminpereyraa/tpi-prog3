@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+}
+
+#registrar {
+    background-color: #4CAF50;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    color: white;
+}
+
+#email,
+#password,
+#nombre,
+#confirmar-password {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.boton {
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.volver {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #4CAF50;
+}
+
+#mensaje {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#mensaje.error {
+  color: #ff4d4d;
+}
+
+#mensaje.exito {
+  color: #00cc66;
+}
