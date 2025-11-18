@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Pizzería</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <header>
+        <h1>Panel de Administración</h1>
+        <button id="cerrarSesion">Cerrar sesión</button>
+    </header>
+
+    <main>
+        <section id="menuAdmin">
+            <h2>Gestión del Menú</h2>
+            <button id="btnCargarMenu">Cargar menú</button>
+
+            <div id="listaMenu" class="cards"></div>
+        </section>
+
+        <hr>
+
+        <section id="pedidosAdmin">
+            <h2>Gestión de Pedidos</h2>
+            <button id="btnCargarPedidos">Cargar pedidos</button>
+            <div id="listaPedidos"></div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Dashboard de Pedidos</h2>
+            <canvas id="graficoPedidos" width="400" height="300"></canvas>
+        </section>
+
+        <h2>Gestión de Usuarios</h2>
+
+        <button id="btnCargarUsuarios">Cargar usuarios</button>
+
+        <div id="usuariosContainer"></div>
+
+        <h3>Crear nuevo usuario</h3>
+        <form id="formCrearUsuario">
+        <input type="text" id="nuevoNombre" placeholder="Nombre" required>
+        <input type="email" id="nuevoEmail" placeholder="Email" required>
+        <input type="password" id="nuevoPassword" placeholder="Password" required>
+
+        <select id="nuevoRol">
+            <option value="user">Usuario</option>
+            <option value="admin">Administrador</option>
+        </select>
+
+        <button type="submit">Crear usuario</button>
+        </form>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
