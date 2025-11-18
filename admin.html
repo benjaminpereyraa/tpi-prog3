@@ -35,6 +35,27 @@
             <h2>Dashboard de Pedidos</h2>
             <canvas id="graficoPedidos" width="400" height="300"></canvas>
         </section>
+
+        <h2>Gestión de Usuarios</h2>
+
+        <button id="btnCargarUsuarios">Cargar usuarios</button>
+
+        <div id="usuariosContainer"></div>
+
+        <h3>Crear nuevo usuario</h3>
+        <form id="formCrearUsuario">
+        <input type="text" id="nuevoNombre" placeholder="Nombre" required>
+        <input type="email" id="nuevoEmail" placeholder="Email" required>
+        <input type="password" id="nuevoPassword" placeholder="Password" required>
+
+        <select id="nuevoRol">
+            <option value="user">Usuario</option>
+            <option value="admin">Administrador</option>
+        </select>
+
+        <button type="submit">Crear usuario</button>
+        </form>
+
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

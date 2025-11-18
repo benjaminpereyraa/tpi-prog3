@@ -148,3 +148,98 @@ function generarGrafico(pedidos) {
         }
     });
 }
+
+const API_USERS = "https://6915332d84e8bd126af90ca8.mockapi.io/users";
+
+// Cargar usuarios
+document.getElementById("btnCargarUsuarios").addEventListener("click", cargarUsuarios);
+
+async function cargarUsuarios() {
+    const cont = document.getElementById("usuariosContainer");
+    cont.innerHTML = "<p>Cargando...</p>";
+
+    try {
+        const res = await fetch(API_USERS);
+        const data = await res.json();
+
+        cont.innerHTML = "";
+
+        data.forEach(user => {
+            const div = document.createElement("div");
+            div.classList.add("card-usuario");
+
+            div.innerHTML = `
+                <p><strong>${user.nombre}</strong></p>
+                <p>${user.email}</p>
+                <p>Rol: ${user.role}</p>
+
+                <button onclick="eliminarUsuario('${user.id}')">Eliminar</button>
+                <button onclick="abrirCambioPassword('${user.id}')">Cambiar contraseña</button>
+            `;
+
+            cont.appendChild(div);
+        });
+    } catch (err) {
+        console.error("Error al cargar usuarios:", err);
+        cont.innerHTML = "<p>Error al cargar usuarios ❌</p>";
+    }
+}
+async function eliminarUsuario(id) {
+    const confirmar = confirm("¿Seguro que querés eliminar este usuario?");
+    if (!confirmar) return;
+
+    try {
+        const res = await fetch(`${API_USERS}/${id}`, {
+            method: "DELETE"
+        });
+
+        if (!res.ok) {
+            throw new Error("Error al eliminar usuario");
+        }
+
+        alert("Usuario eliminado correctamente");
+        cargarUsuarios(); // refresca la lista
+
+    } catch (error) {
+        console.error("Error al eliminar:", error);
+        alert("No se pudo eliminar el usuario ❌");
+    }
+}
+
+
+// Crear usuario
+document.getElementById("formCrearUsuario").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const nuevoUsuario = {
+        nombre: document.getElementById("nuevoNombre").value,
+        email: document.getElementById("nuevoEmail").value,
+        password: document.getElementById("nuevoPassword").value,
+        role: document.getElementById("nuevoRol").value
+    };
+
+    await fetch(API_USERS, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(nuevoUsuario)
+    });
+
+    alert("Usuario creado!");
+    cargarUsuarios();
+});
+
+// Cambiar password
+async function abrirCambioPassword(id) {
+    const nueva = prompt("Ingresá la nueva contraseña:");
+    if (!nueva) return;
+
+    await fetch(`${API_USERS}/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: nueva })
+    });
+
+    alert("Contraseña actualizada");
+    cargarUsuarios();
+}
+
