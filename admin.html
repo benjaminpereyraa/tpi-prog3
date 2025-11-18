@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - Pizzería</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <header>
+        <h1>Panel de Administración</h1>
+        <button id="cerrarSesion">Cerrar sesión</button>
+    </header>
+
+    <main>
+        <section id="menuAdmin">
+            <h2>Gestión del Menú</h2>
+            <button id="btnCargarMenu">Cargar menú</button>
+
+            <div id="listaMenu" class="cards"></div>
+        </section>
+
+        <hr>
+
+        <section id="pedidosAdmin">
+            <h2>Gestión de Pedidos</h2>
+            <button id="btnCargarPedidos">Cargar pedidos</button>
+            <div id="listaPedidos"></div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Dashboard de Pedidos</h2>
+            <canvas id="graficoPedidos" width="400" height="300"></canvas>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
