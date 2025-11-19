@@ -1,28 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="registrar.css">
-    <title>Inicio De Pagina</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrarse - Pizzería Juancito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="registrar.css">
 </head>
 <body>
-    <form id="registrar">
-        <h1>Registrar</h1>
-        <input type="text" id="nombre" placeholder="Nombre Completo" required>
-        <input type="email" id="email" placeholder="Correo Electrónico" required>
-        <input type="password" id="password" placeholder="Contraseña" required>
-        <input type="password" id="confirmar-password" placeholder="Confirmar Contraseña" required>
-        <select id="role" required>
-            <option value="user">Cliente</option>
-            <option value="admin">Administrador</option>
-        </select>
-        <button type="submit" class="boton">Registrar</button>
-        <div>
-            <p id="mensaje"></p>
-        </div>
+
+  <div class="contenedor">
+    <h1>Pizzería Juancito</h1>
+    <p class="subtitulo">¡Unite a la familia pizzera!</p>
+
+    <form id="form-registro">
+      <input type="text" id="nombre" placeholder="Nombre completo" required>
+      <input type="email" id="email" placeholder="Correo electrónico" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <input type="password" id="confirmar-password" placeholder="Confirmar contraseña" required>
+
+      <select id="role" required>
+        <option value="" disabled selected>Tipo de cuenta</option>
+        <option value="user">Cliente</option>
+        <option value="admin">Administrador</option>
+      </select>
+
+      <button type="submit" class="btn-principal">Crear cuenta</button>
     </form>
-    <a href="index.html" class="volver">Volver al inicio</a>
-    <script src="registrar.js"></script>
+
+    <div id="mensaje"></div>
+
+    <a href="index.html" class="btn-volver">Volver al inicio</a>
+
+    <p class="login-link">
+      ¿Ya tenés cuenta? <a href="login.html">Iniciá sesión acá</a>
+    </p>
+  </div>
+
+  <script src="registrar.js"></script>
 </body>
 </html>
