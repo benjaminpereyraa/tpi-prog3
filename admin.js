@@ -1,9 +1,10 @@
+let graficoPedidosInstance = null;
 const API_MENU = "https://6915332d84e8bd126af90ca8.mockapi.io/menu";
-const API_ORDERS = "https://6915332d84e8bd126af90ca8.mockapi.io/orders";
+const API_ORDERS = "https://6911df1052a60f10c81f9c7d.mockapi.io/orders";
 
-/* -------------------------------
-   🚨 PROTECCIÓN PARA SOLO ADMIN
---------------------------------*/
+
+
+
 const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
 if (!usuario || usuario.role !== "admin") {
@@ -11,17 +12,13 @@ if (!usuario || usuario.role !== "admin") {
     window.location.href = "login.html";
 }
 
-/* -------------------------------
-   🔹 Cerrar sesión
---------------------------------*/
+
 document.getElementById("cerrarSesion").addEventListener("click", () => {
     localStorage.removeItem("usuarioLogueado");
     window.location.href = "login.html";
 });
 
-/* -------------------------------
-   📌 Cargar Menú
---------------------------------*/
+
 document.getElementById("btnCargarMenu").addEventListener("click", cargarMenu);
 
 async function cargarMenu() {
@@ -56,7 +53,7 @@ async function cargarMenu() {
     }
 }
 
-/* Cambiar disponible / no disponible */
+
 async function toggleDisponible(id, estadoActual) {
     await fetch(`${API_MENU}/${id}`, {
         method: "PUT",
@@ -67,18 +64,30 @@ async function toggleDisponible(id, estadoActual) {
     cargarMenu();
 }
 
-/* -------------------------------
-   📦 Cargar Pedidos
---------------------------------*/
+
 document.getElementById("btnCargarPedidos").addEventListener("click", cargarPedidos);
 
+
 async function cargarPedidos() {
+    
+console.log("📌 Fetching pedidos desde:", API_ORDERS);
+
+const res = await fetch(API_ORDERS);
+console.log("📌 Status HTTP:", res.status);
+
+const pedidos = await res.json();
+console.log("📌 Pedidos recibidos:", pedidos);
     const contenedor = document.getElementById("listaPedidos");
     contenedor.innerHTML = "<p>Cargando...</p>";
+    contenedor.innerHTML = "";
+
 
     try {
+        console.log("➡️ URL usada:", API_ORDERS);
         const res = await fetch(API_ORDERS);
         const pedidos = await res.json();
+
+  
 
         contenedor.innerHTML = "";
 
@@ -88,7 +97,7 @@ async function cargarPedidos() {
 
             div.innerHTML = `
                 <h3>Pedido #${p.id}</h3>
-                <p>Usuario: ${p.userId}</p>
+                <p>Usuario: ${p.userid}</p>
                 <p>Total: $${p.total}</p>
                 <p>Estado: ${p.estado}</p>
 
@@ -105,11 +114,12 @@ async function cargarPedidos() {
         generarGrafico(pedidos);
 
     } catch (error) {
-        contenedor.innerHTML = "Error al cargar pedidos ❌";
+    console.error("❌ ERROR AL CARGAR PEDIDOS:", error);
+    contenedor.innerHTML = "Error al cargar pedidos ❌";
     }
 }
 
-/* Cambiar estado */
+
 async function cambiarEstado(id, nuevoEstado) {
     await fetch(`${API_ORDERS}/${id}`, {
         method: "PUT",
@@ -120,38 +130,33 @@ async function cambiarEstado(id, nuevoEstado) {
     cargarPedidos();
 }
 
-/* -------------------------------
-   📊 Dashboard con Chart.js
---------------------------------*/
-function generarGrafico(pedidos) {
-    const estados = {
-        pendiente: 0,
-        preparación: 0,
-        entregado: 0
-    };
 
-    pedidos.forEach(p => estados[p.estado]++);
 
+
+function generarGrafico(data) {
     const ctx = document.getElementById("graficoPedidos");
 
-    new Chart(ctx, {
-        type: "pie",
+
+    if (graficoPedidosInstance) {
+        graficoPedidosInstance.destroy();
+    }
+
+    graficoPedidosInstance = new Chart(ctx, {
+        type: "bar",
         data: {
-            labels: ["Pendiente", "En preparación", "Entregado"],
+            labels: ["Pendientes", "En proceso", "Completados"],
             datasets: [{
-                data: [
-                    estados.pendiente,
-                    estados.preparación,
-                    estados.entregado
-                ]
+                label: "Cantidad de pedidos",
+                data: data,
             }]
         }
     });
 }
 
+
 const API_USERS = "https://6915332d84e8bd126af90ca8.mockapi.io/users";
 
-// Cargar usuarios
+
 document.getElementById("btnCargarUsuarios").addEventListener("click", cargarUsuarios);
 
 async function cargarUsuarios() {
@@ -198,7 +203,7 @@ async function eliminarUsuario(id) {
         }
 
         alert("Usuario eliminado correctamente");
-        cargarUsuarios(); // refresca la lista
+        cargarUsuarios(); 
 
     } catch (error) {
         console.error("Error al eliminar:", error);
@@ -207,7 +212,6 @@ async function eliminarUsuario(id) {
 }
 
 
-// Crear usuario
 document.getElementById("formCrearUsuario").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -228,7 +232,7 @@ document.getElementById("formCrearUsuario").addEventListener("submit", async (e)
     cargarUsuarios();
 });
 
-// Cambiar password
+
 async function abrirCambioPassword(id) {
     const nueva = prompt("Ingresá la nueva contraseña:");
     if (!nueva) return;

@@ -1,4 +1,4 @@
-/* ------ ESTILO GENERAL ------ */
+
 body {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* ------ HEADER ------ */
+
 header {
     background: #e63946;
     color: white;
@@ -37,7 +37,7 @@ header h1 {
     background: #f4f4f4;
 }
 
-/* ------ MAIN SECTIONS ------ */
+
 main {
     padding: 20px;
     max-width: 1000px;
@@ -57,7 +57,7 @@ section h2 {
     color: #e63946;
 }
 
-/* ------ BOTONES ------ */
+
 button {
     background-color: #4CAF50;
     color: white;
@@ -74,7 +74,7 @@ button:hover {
     background-color: #45a049;
 }
 
-/* ------ CARDS DE MENÚ ------ */
+
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -97,7 +97,7 @@ button:hover {
     margin: 5px 0;
 }
 
-/* ------ PEDIDOS ------ */
+
 .pedido {
     background: #ffffff;
     margin-bottom: 15px;
@@ -110,7 +110,7 @@ button:hover {
     margin: 0 0 8px;
 }
 
-/* SELECT DE ESTADO */
+
 select {
     padding: 8px;
     border-radius: 6px;
@@ -119,7 +119,7 @@ select {
     margin-top: 8px;
 }
 
-/* ------ GRÁFICO ------ */
+
 canvas {
     margin-top: 10px;
     background: #ffffff;
