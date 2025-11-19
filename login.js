@@ -1,5 +1,4 @@
-// login.js
-const formLogin = document.getElementById("form-login"); // ← AQUÍ ESTABA EL ERROR
+const formLogin = document.getElementById("form-login");
 const API_URL = "https://6915332d84e8bd126af90ca8.mockapi.io/users";
 
 formLogin.addEventListener("submit", async (e) => {

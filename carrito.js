@@ -47,7 +47,6 @@ function eliminar(i) {
 
 mostrarCarrito();
 
-/* Enviar pedido */
 document.getElementById("enviarPedido").addEventListener("click", async () => {
     if (carrito.length === 0) {
         alert("El carrito está vacío.");

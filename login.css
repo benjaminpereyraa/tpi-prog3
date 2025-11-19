@@ -38,7 +38,6 @@ h1 {
   font-weight: 800;
 }
 
-/* Inputs */
 form input {
   width: 100%;
   padding: 16px;
@@ -55,7 +54,6 @@ form input:focus {
   box-shadow: 0 0 0 4px rgba(255,186,8,0.3);
 }
 
-/* Botón principal */
 .btn-principal {
   background: #e63946;
   color: white;
@@ -76,7 +74,6 @@ form input:focus {
   box-shadow: 0 20px 40px rgba(230,57,70,0.8);
 }
 
-/* Botón volver */
 .btn-volver {
   display: inline-block;
   margin-top: 20px;
@@ -95,7 +92,6 @@ form input:focus {
   color: white;
 }
 
-/* Link de registro */
 .registro-link {
   margin-top: 30px;
   font-size: 1.1rem;
