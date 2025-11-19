@@ -8,7 +8,6 @@ body {
     background-color: #f8f8f8;
     font-family: Arial, sans-serif;
 }
-
 #registrar {
     background-color: #4CAF50;
     padding: 30px;
@@ -19,7 +18,6 @@ body {
     width: 300px;
     color: white;
 }
-
 #email,
 #password,
 #nombre,
@@ -28,14 +26,12 @@ body {
     border: none;
     border-radius: 5px;
 }
-
 .boton {
     border-radius: 5px;
     padding: 10px;
     border: none;
     cursor: pointer;
 }
-
 .volver {
     position: absolute;
     top: 20px;
@@ -47,17 +43,14 @@ body {
     font-weight: bold;
     background-color: #4CAF50;
 }
-
 #mensaje {
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
 }
-
 #mensaje.error {
   color: #ff4d4d;
 }
-
 #mensaje.exito {
   color: #00cc66;
 }

@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="registrar.css">
     <title>Inicio De Pagina</title>
 </head>
-
 <body>
-    
     <form id="registrar">
         <h1>Registrar</h1>
         <input type="text" id="nombre" placeholder="Nombre Completo" required>
@@ -17,18 +14,15 @@
         <input type="password" id="password" placeholder="Contraseña" required>
         <input type="password" id="confirmar-password" placeholder="Confirmar Contraseña" required>
         <select id="role" required>
-            <option value="cliente">Cliente</option>
+            <option value="user">Cliente</option>
             <option value="admin">Administrador</option>
         </select>
         <button type="submit" class="boton">Registrar</button>
-        <div >
+        <div>
             <p id="mensaje"></p>
         </div>
-        
     </form>
-
     <a href="index.html" class="volver">Volver al inicio</a>
     <script src="registrar.js"></script>
 </body>
-
 </html>

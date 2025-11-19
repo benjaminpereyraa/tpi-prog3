@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="menu.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="menu2.css">
+    <title>Menú - Pizzería</title>
 </head>
-
 <body>
-    <nav id="principal">
-        <ul class="navegacion">
-            <li><a href="#principal">Inicio</a></li>
-            <li><a href="menu.html">Menú</a></li>
-            <li><a href="ubicacion.html">Ubicación & Horario</a></li>
-        </ul>
-    </nav>
-
-    <div class="imagen">
-        <img src="stock-photo-tasty-pepperoni-pizza-with-mushrooms-and-olives.webp" alt="Imagen de fondo">
-        <h1 class="titulo">Pizzería Juancito</h1>
-        <p class="descripcion">En Pizzería Juancito nos especializamos en la elaboración de pizzas artesanales, hechas con ingredientes
-            frescos y de la mejor calidad. Preparamos cada pizza al momento, con masa casera, salsa tradicional y
-            sabores únicos para todos los gustos.</p>
+    <header>
+        <h1>Menú de Pizzería</h1>
+        <button id="cerrarSesion">Cerrar sesión</button>
+    </header>
+    <section class="categorias">
+        <h2>Categorías</h2>
+        <div id="categorias-container" class="cat-grid">
+        </div>
+    </section>
+    <section class="productos">
+        <h2 id="titulo-categoria"></h2>
+        <div id="productos-container" class="prod-grid">
+        </div>
+    </section>
+    <div id="carrito-icon" class="carrito-icon">
+        🛒 <span id="carrito-contador">0</span>
     </div>
-
+    <div id="carrito-panel" class="carrito-panel oculto">
+        <h3>Tu Carrito</h3>
+        <ul id="lista-carrito"></ul>
+        <h3>Total: $<span id="total-carrito">0</span></h3>
+        <button onclick="vaciarCarrito()" class="vaciar-btn">Vaciar carrito</button>
+        <button onclick="finalizarCompra()" class="comprar-btn">Finalizar compra</button>
+    </div>
+    <script src="menu.js"></script>
 </body>
-
 </html>

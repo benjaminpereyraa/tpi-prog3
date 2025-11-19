@@ -1,12 +1,9 @@
-/* ------ ESTILO GENERAL ------ */
 body {
     margin: 0;
     padding: 0;
     background: #f4f4f4;
     font-family: Arial, sans-serif;
 }
-
-/* ------ HEADER ------ */
 header {
     background: #e63946;
     color: white;
@@ -16,12 +13,10 @@ header {
     align-items: center;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
-
 header h1 {
     margin: 0;
     font-size: 24px;
 }
-
 #cerrarSesion {
     background: white;
     color: #e63946;
@@ -32,18 +27,14 @@ header h1 {
     font-weight: bold;
     transition: 0.3s;
 }
-
 #cerrarSesion:hover {
     background: #f4f4f4;
 }
-
-/* ------ MAIN SECTIONS ------ */
 main {
     padding: 20px;
     max-width: 1000px;
     margin: auto;
 }
-
 section {
     background: white;
     padding: 20px;
@@ -51,13 +42,10 @@ section {
     margin-bottom: 30px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-
 section h2 {
     margin-top: 0;
     color: #e63946;
 }
-
-/* ------ BOTONES ------ */
 button {
     background-color: #4CAF50;
     color: white;
@@ -69,35 +57,27 @@ button {
     transition: background-color .3s;
     margin: 10px 0;
 }
-
 button:hover {
     background-color: #45a049;
 }
-
-/* ------ CARDS DE MENÚ ------ */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 15px;
     margin-top: 15px;
 }
-
 .card {
     background: #fff;
     padding: 15px;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-
 .card h3 {
     margin: 0 0 10px;
 }
-
 .card p {
     margin: 5px 0;
 }
-
-/* ------ PEDIDOS ------ */
 .pedido {
     background: #ffffff;
     margin-bottom: 15px;
@@ -105,12 +85,9 @@ button:hover {
     border-radius: 12px;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
-
 .pedido h3 {
     margin: 0 0 8px;
 }
-
-/* SELECT DE ESTADO */
 select {
     padding: 8px;
     border-radius: 6px;
@@ -118,8 +95,6 @@ select {
     font-size: 14px;
     margin-top: 8px;
 }
-
-/* ------ GRÁFICO ------ */
 canvas {
     margin-top: 10px;
     background: #ffffff;
@@ -127,4 +102,14 @@ canvas {
     border-radius: 15px;
     width: 100%;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.card-usuario {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+.card-usuario button {
+    margin-right: 10px;
 }

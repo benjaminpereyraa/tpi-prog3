@@ -8,26 +8,21 @@
     width: 300px;
     color: white;
 }
-
 #titulo {
     text-align: center;
 }
-
 #email,
 #password {
     padding: 10px;
     border: none;
     border-radius: 5px;
 }
-
 .boton {
     border-radius: 5px;
     padding: 10px;
     border: none;
     cursor: pointer;
-
 }
-
 body {
     margin: 0;
     padding: 0;
@@ -38,7 +33,6 @@ body {
     background-color: #f8f8f8;
     font-family: Arial, sans-serif;
 }
-
 .volver {
     position: absolute;
     top: 20px;
