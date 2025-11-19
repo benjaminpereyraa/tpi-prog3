@@ -1,9 +1,18 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 07d04ee046c5662c35d79539a1ec83ba7c084a58
 body {
     margin: 0;
     padding: 0;
     background: #f4f4f4;
     font-family: Arial, sans-serif;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 07d04ee046c5662c35d79539a1ec83ba7c084a58
 header {
     background: #e63946;
     color: white;
@@ -30,6 +39,11 @@ header h1 {
 #cerrarSesion:hover {
     background: #f4f4f4;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 07d04ee046c5662c35d79539a1ec83ba7c084a58
 main {
     padding: 20px;
     max-width: 1000px;
@@ -46,6 +60,11 @@ section h2 {
     margin-top: 0;
     color: #e63946;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 07d04ee046c5662c35d79539a1ec83ba7c084a58
 button {
     background-color: #4CAF50;
     color: white;
@@ -60,6 +79,11 @@ button {
 button:hover {
     background-color: #45a049;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 07d04ee046c5662c35d79539a1ec83ba7c084a58
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -78,6 +102,11 @@ button:hover {
 .card p {
     margin: 5px 0;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 07d04ee046c5662c35d79539a1ec83ba7c084a58
 .pedido {
     background: #ffffff;
     margin-bottom: 15px;
@@ -88,6 +117,11 @@ button:hover {
 .pedido h3 {
     margin: 0 0 8px;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 07d04ee046c5662c35d79539a1ec83ba7c084a58
 select {
     padding: 8px;
     border-radius: 6px;
@@ -95,6 +129,11 @@ select {
     font-size: 14px;
     margin-top: 8px;
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 07d04ee046c5662c35d79539a1ec83ba7c084a58
 canvas {
     margin-top: 10px;
     background: #ffffff;
